@@ -304,7 +304,7 @@
           "z": 1000.00
         },
         {
-          "config": "{\"name\":\"dacb6cadafd3e9a5596e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":243.89243162091313,\"y\":0,\"z\":0,\"width\":2256.517371551474,\"height\":94.27774667699164,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"fill\":[{\"properties\":{\"fillColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#4A76A3'\"}}}}}},\"selector\":{\"id\":\"default\"}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "config": "{\"name\":\"dacb6cadafd3e9a5596e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":243.89243162091313,\"y\":0,\"z\":0,\"width\":2256.517371551474,\"height\":94.27774667699164,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"fill\":[{\"properties\":{\"fillColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":0}}}}}},\"selector\":{\"id\":\"default\"}}]}},\"howCreated\":\"InsertVisualButton\"}",
           "filters": "[]",
           "height": 94.28,
           "width": 2256.52,
