@@ -1,0 +1,25 @@
+relationship 426fc10a-d390-4f60-872b-5ee8b3f91425
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Contract_Infromation.'Refresh Time'
+	toColumn: LocalDateTable_abc61796-9034-428e-8103-9e751dd94212.Date
+
+relationship fdc5c4d9-3e06-42d4-916d-6a89bfe5b6a4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Contract_Infromation.'Termination Date'
+	toColumn: LocalDateTable_b6c8e675-43c9-4c10-8d80-51f190d836d3.Date
+
+relationship a3e9ed37-5f50-4976-bc5c-e4af6a35e030
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Contract_Infromation.'Post Date'
+	toColumn: LocalDateTable_f273ab7c-3068-4b57-b574-76b42b1f6bb0.Date
+
+relationship b2c77604-ef4f-4a60-a14d-e1f162649c59
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Contract_Infromation.'Effective Date'
+	toColumn: LocalDateTable_651e54cc-4295-4d03-8c96-1cc2dec8660d.Date
+
+relationship b781c6d2-a1ea-4a17-9319-626e7fee1288
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Contract_Infromation.Post_date_Month
+	toColumn: LocalDateTable_65e4e1f3-6c11-442b-a1e1-af38ac3add05.Date
+

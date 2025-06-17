@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Cash Receipt Summary Report_test (1)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9b37b28a-b5a3-43cb-be4e-e8353c05489f"
+  }
+}

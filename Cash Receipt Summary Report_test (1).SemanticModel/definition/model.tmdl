@@ -1,0 +1,26 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Contract_Infromation"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.144.679.0 (25.06)+ef40146207b86a826d1c72a7727a743ee37450e9
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Contract_Infromation
+ref table DateTableTemplate_3726b265-ac89-46d3-92ba-a2072520a6f6
+ref table LocalDateTable_abc61796-9034-428e-8103-9e751dd94212
+ref table LocalDateTable_b6c8e675-43c9-4c10-8d80-51f190d836d3
+ref table LocalDateTable_f273ab7c-3068-4b57-b574-76b42b1f6bb0
+ref table LocalDateTable_651e54cc-4295-4d03-8c96-1cc2dec8660d
+ref table LocalDateTable_65e4e1f3-6c11-442b-a1e1-af38ac3add05
+
+ref cultureInfo en-US
+

@@ -1,0 +1,217 @@
+table Contract_Infromation
+	lineageTag: 2eccb8e7-5480-4b20-af6d-0128d72f2425
+
+	measure time = CONCATENATE("Last refreshed at ",CONCATENATE(MAX(Contract_Infromation[Refresh Time])," EST"))
+		lineageTag: 59d60e6f-7e4b-4732-a9af-0bb833b8bc5f
+
+	measure 'Total Rows' = COUNTROWS(Contract_Infromation)
+		formatString: #,0
+		lineageTag: 0ef9eccb-b757-45d4-a824-46525606ac65
+
+	column 'Contract ID'
+		dataType: string
+		lineageTag: 7ff7cc75-76b6-4098-b0ae-d3a1b64504dd
+		summarizeBy: none
+		sourceColumn: Contract ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: 304036b8-3c1d-4b51-85bc-eab918647681
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: 8eae2534-dbd5-477e-b3fd-95e3699e42bc
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Time' = UTCNOW()-TIME(4,0,0)
+		formatString: General Date
+		lineageTag: a04f683a-8c74-4954-86b5-b2e6ab90ec6d
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 426fc10a-d390-4f60-872b-5ee8b3f91425
+			defaultHierarchy: LocalDateTable_abc61796-9034-428e-8103-9e751dd94212.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Account ID'
+		dataType: string
+		lineageTag: 8a2cc92a-eacf-4c08-bbac-6a0c9024ddb3
+		summarizeBy: none
+		sourceColumn: Customer Account ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Termination Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4d9abb6c-9ed6-4e59-bef4-a757435b6b0f
+		summarizeBy: none
+		sourceColumn: Termination Date
+
+		variation Variation
+			isDefault
+			relationship: fdc5c4d9-3e06-42d4-916d-6a89bfe5b6a4
+			defaultHierarchy: LocalDateTable_b6c8e675-43c9-4c10-8d80-51f190d836d3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		lineageTag: 07d2ef1a-aad4-4145-9a73-999ecac54580
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Post Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 2bd5075c-d7b8-403d-a193-964e07ea78ff
+		summarizeBy: none
+		sourceColumn: Post Date
+
+		variation Variation
+			isDefault
+			relationship: a3e9ed37-5f50-4976-bc5c-e4af6a35e030
+			defaultHierarchy: LocalDateTable_f273ab7c-3068-4b57-b574-76b42b1f6bb0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Effective Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d7e0393c-5014-4114-879e-cc90c11fe602
+		summarizeBy: none
+		sourceColumn: Effective Date
+
+		variation Variation
+			isDefault
+			relationship: b2c77604-ef4f-4a60-a14d-e1f162649c59
+			defaultHierarchy: LocalDateTable_651e54cc-4295-4d03-8c96-1cc2dec8660d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Finance_Company
+		dataType: string
+		lineageTag: f8679a8a-1b26-4e1e-a03c-4c0481a47ec5
+		summarizeBy: none
+		sourceColumn: Finance_Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Type
+		dataType: string
+		lineageTag: 0d2207bb-62d8-4c9c-992a-e2772f56a193
+		summarizeBy: none
+		sourceColumn: Product_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Termination_Reason
+		dataType: string
+		lineageTag: fdabfde1-6c9c-4cb5-a79a-203946eb992b
+		summarizeBy: none
+		sourceColumn: Termination_Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pool Id'
+		dataType: string
+		lineageTag: 7abb70e5-0d43-4056-ac88-b3cea4bfeaa3
+		summarizeBy: none
+		sourceColumn: Pool Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Code Description'
+		dataType: string
+		lineageTag: 7607b8f1-8727-4461-8693-4a76f2df8ac9
+		summarizeBy: none
+		sourceColumn: Transaction Code Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Post_date_Month = Contract_Infromation[Post Date]
+		formatString: yyyy-mm
+		lineageTag: 091dbcc9-08a4-46c8-b2ca-8ad40c59260d
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: b781c6d2-a1ea-4a17-9319-626e7fee1288
+			defaultHierarchy: LocalDateTable_65e4e1f3-6c11-442b-a1e1-af38ac3add05.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column MonthText = ```
+			FORMAT(EOMONTH(Contract_Infromation[Post Date], 0), "yyyy-mm")
+			
+			```
+		lineageTag: addf0fd5-9040-460e-94e5-fba308a11b5e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Termination Reason_new' = IF(ISBLANK(Contract_Infromation[Termination_Reason]),"Active",Contract_Infromation[Termination_Reason])
+		lineageTag: bc4650a6-1a22-49e1-bd9b-dde2d7a0451b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Detail Oid'
+		dataType: int64
+		formatString: 0
+		lineageTag: 76f5f993-ee45-4f5e-92c3-3092411b80e6
+		summarizeBy: sum
+		sourceColumn: Invoice Detail Oid
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: d7ab53c3-1c85-467e-b31c-d6f748fc30bb
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Code'
+		dataType: string
+		lineageTag: e678fdc9-28e1-4ae7-b885-6652c14ba6ce
+		summarizeBy: none
+		sourceColumn: Transaction Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Contract_Infromation = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("10.12.17.180", "ASPIREVault", [Query="SELECT #(lf)    cont.[Contract ID],#(lf)    cont.[Customer Account ID],#(lf)#(tab)iv.[Customer ID],iv.[Invoice Detail Oid],#(lf)    cont.[Customer Name],#(lf)    cont.[Termination Date],#(lf)    iv.[Transaction Code Description],#(lf)#(tab)iv.[Amount],#(lf)#(tab)iv.[Type],#(lf)#(tab)iv.[Post Date],#(lf)#(tab)iv.[Effective Date],#(lf)        iv.[Transaction Code],#(lf)    cont.[Finance Company Name] AS Finance_Company,#(lf)    cont.[Finance Program Code] AS Product_Type,#(lf)    cont.[Termination Reason Code] AS Termination_Reason,#(lf)    cont.[Pool Id]#(lf)#(lf)FROM [ASPIREVault].[LTIData].[ContractVW] AS cont#(lf)LEFT JOIN [ASPIREVault].[AdhocReport].[InvoiceHistoryVW] AS iv#(lf)ON cont.[Contract ID] = iv.[Contract ID]#(lf)WHERE cont.[Finance Company Name] IN ('Vault Credit Corporation', 'Vault Financial Corporation')#(lf)  AND iv.[Post Date] >= DATEADD(YEAR, -1, GETDATE())#(lf)  AND iv.[Type] Not IN ('Invoice', 'Credit Memo','Write Off')#(lf)  AND iv.[Transaction Code] IN (#(lf)        'LOAN',#(lf)        'PAYOF',#(lf)        'PRINC',#(lf)        'EQSALE',#(lf)        'EQSALE1',#(lf)        'PENALTY',#(lf)        'PNLTYBL',#(lf)        'RENT',#(lf)        'GAIN&LOSSBL',#(lf)        'GAIN&LOSSLOAN',#(lf)        'GAIN&LOSSLEASE',#(lf)        'SALEPR',#(lf)        'PMTARR',#(lf)        'LEGALS',#(lf)        'CLIENTS',#(lf)        'DIVIDEND',#(lf)        'COLLAG',#(lf)        'LASTREC',#(lf)        'INSSET',#(lf)        'GAIN&LOSSBA',#(lf)#(tab)#(tab)'RENEWAL'#(lf)    )#(lf)  ORDER BY cont.[Contract ID] DESC;", CommandTimeout=#duration(0, 0, 30, 0)]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Post Date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

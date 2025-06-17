@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Cash Receipt Summary Report_test (1)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "623bce12-81de-48ca-9df2-4433d8db9581"
+  }
+}
